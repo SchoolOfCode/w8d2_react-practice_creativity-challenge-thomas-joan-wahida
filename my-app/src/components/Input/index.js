@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Input({ onSubmitClick }) {
+function Input({ onSubmitClick, addItem}) {
   const [text, setText] = useState("");
   const [priority, setPriority] = useState("");
   const [quotes,setQuotes] = useState("")
@@ -11,6 +11,7 @@ function Input({ onSubmitClick }) {
     loadData();
   },[]);
 
+  
   const loadData = async () => {
     const response = await fetch("https://type.fit/api/quotes");
     const data = await response.json();
@@ -36,7 +37,7 @@ function Input({ onSubmitClick }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} value={text} />
+      <input onChange={handleChange, addItem} value={text} />
       <input type = "number" onChange={handleChangePriority} value={priority} />
       <button>+</button>
     </form>

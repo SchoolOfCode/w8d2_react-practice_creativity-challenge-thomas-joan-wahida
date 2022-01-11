@@ -6,8 +6,16 @@ import "./App.css";
 
 
 function App() {
+// const [array,setArray] = useState([])
+// console.log(array)
+
+// function addItemToArray(){
+//   const listEven = [2,4,6,8]
+//   setArray(listEven)
+//   console.log(array)
+// }
+
   const [todos, setTodos] = useState([]);
-  console.log(todos)
 
 
   function addItem(item) {
@@ -27,13 +35,13 @@ function App() {
 
   return (
     <div className="App">
-      <Input onSubmitClick={addItem} />
+      <Input onSubmitClick={addItem} addItem={addItemToArray}/>
       <div className = "heading">
       <h1>Your To-Do List</h1>
       <h1>Your Priority</h1>
       <h1>Your Inspirational Quote</h1>
       </div>
-      <List id="list" items={todos} onItemDeleteClick={removeItem} />
+      <List id="list" items={todos} onItemDeleteClick={removeItem}/>
     </div>
   );
 }
