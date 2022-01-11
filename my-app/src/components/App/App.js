@@ -2,8 +2,8 @@ import { useState } from "react";
 
 import List from "../List";
 import Input from "../Input";
-
 import "./App.css";
+
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -16,7 +16,7 @@ function App() {
     if (todos.includes(item)) {
       return;
     }
-    setTodos([{ text: item.text, priority: item.priority}, ...todos].sort((a,b) => {
+    setTodos([{ text: item.text, priority: item.priority, quotes: item.quotes}, ...todos].sort((a,b) => {
       return a.priority-b.priority
   }))}
 
@@ -28,7 +28,12 @@ function App() {
   return (
     <div className="App">
       <Input onSubmitClick={addItem} />
-      <List items={todos} onItemDeleteClick={removeItem} />
+      <div className = "heading">
+      <h1>Your To-Do List</h1>
+      <h1>Your Priority</h1>
+      <h1>Your Inspirational Quote</h1>
+      </div>
+      <List id="list" items={todos} onItemDeleteClick={removeItem} />
     </div>
   );
 }

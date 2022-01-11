@@ -8,7 +8,7 @@ function List({ items, onItemDeleteClick}) {
         function deleteItem() {
           onItemDeleteClick(index);
         }
-        return <ListItem key={index} text={item.text} onDeleteClick={deleteItem} priority={item.priority}/>;
+        return <ListItem key={index} text={item.text} onDeleteClick={deleteItem} priority={item.priority}  quotes={item.quotes}/>;
       })}
     </ul>
   );

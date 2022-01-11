@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Input({ onSubmitClick }) {
   const [text, setText] = useState("");
   const [priority, setPriority] = useState("");
+  const [quotes,setQuotes] = useState("")
+
+  let randomNumber = Math.floor(Math.random()*1643)
+
+  useEffect(()=>{
+    loadData();
+  },[]);
+
+  const loadData = async () => {
+    const response = await fetch("https://type.fit/api/quotes");
+    const data = await response.json();
+    setQuotes(data[randomNumber].text)
+    console.log(quotes)
+}
 
   function handleChange(event) {
     setText(event.target.value);
@@ -15,7 +29,7 @@ function Input({ onSubmitClick }) {
   function handleSubmit(event) {
     // Stop the page from refreshing as the form will try and submit and refresh by default
     event.preventDefault();
-    onSubmitClick({text,priority})
+    onSubmitClick({text,priority, quotes})
     setText("")
     setPriority("")
   }

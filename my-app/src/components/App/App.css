@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Noto+Sans+KR&display=swap');
+
+main {
+  background-color: aquamarine;
+  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Mulish', sans-serif;
+}
+
+.heading {
+    display:flex;
+    justify-content: space-around;
+}
+
+button, input {
+    padding: 0.5em;
+    border-radius: 10px;
+    font-size: 1em;
+    margin: 1em;
+    font-family: 'Mulish', sans-serif;
+}
+
+ul {
+    display: flex;
+    align-items: flex-start;
+}
