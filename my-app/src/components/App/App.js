@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <Input onSubmitClick={addItem} addItem={addItemToArray}/>
+      <Input onSubmitClick={addItem} />
       <div className = "heading">
       <h1>Your To-Do List</h1>
       <h1>Your Priority</h1>
