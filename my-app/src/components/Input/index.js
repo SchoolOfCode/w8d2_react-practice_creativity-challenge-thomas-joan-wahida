@@ -15,8 +15,9 @@ function Input({ onSubmitClick }) {
   function handleSubmit(event) {
     // Stop the page from refreshing as the form will try and submit and refresh by default
     event.preventDefault();
-    onSubmitClick(text,priority)
+    onSubmitClick({text,priority})
     setText("")
+    setPriority("")
   }
 
   return (

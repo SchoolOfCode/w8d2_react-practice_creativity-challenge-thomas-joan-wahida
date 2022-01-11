@@ -1,14 +1,14 @@
 import React from "react";
 import ListItem from "../ListItem";
 
-function List({ items, onItemDeleteClick, priority }) {
+function List({ items, onItemDeleteClick}) {
   return (
     <ul>
       {items.map(function (item, index) {
         function deleteItem() {
           onItemDeleteClick(index);
         }
-        return <ListItem key={index} text={item} onDeleteClick={deleteItem} priority={priority}/>;
+        return <ListItem key={index} text={item.text} onDeleteClick={deleteItem} priority={item.priority}/>;
       })}
     </ul>
   );
