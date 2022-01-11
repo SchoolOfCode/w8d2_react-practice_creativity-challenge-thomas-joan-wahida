@@ -9,6 +9,7 @@ function Input({ onSubmitClick, addItem}) {
 
   useEffect(()=>{
     loadData();
+    // eslint-disable-next-line
   },[]);
 
   
@@ -37,7 +38,7 @@ function Input({ onSubmitClick, addItem}) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input onChange={handleChange, addItem} value={text} />
+      <input onChange={handleChange} value={text} />
       <input type = "number" onChange={handleChangePriority} value={priority} />
       <button>+</button>
     </form>
